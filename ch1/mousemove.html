@@ -1,0 +1,32 @@
+<script src='https://cdnjs.cloudflare.com/ajax/libs/rxjs/4.1.0/rx.all.js'></script>
+
+<script>
+// BEGINNING OF THE SCRIPT TAG
+
+
+var allMoves = Rx.Observable.fromEvent(document, 'mousemove')
+
+// subscrive all mouse events
+allMoves.subscribe(function(e) {
+  console.log(e.clientX, e.clientY)
+})
+
+var movesOnTheRight = allMoves.filter(function(e) { 
+  return e.clientX > innerWidth / 2
+})
+
+var movesOnTheLeft = allMoves.filter(function(e) {
+  return e.clientX < innerWidth / 2
+})
+
+//subscribe filtered events
+movesOnTheRight.subscribe(function(e){
+  console.log('Mouse is on the right:', e.clientX)
+})
+movesOnTheLeft.subscribe(function(e){
+  console.log('Mouse is on the left:', e.clientX)
+})
+
+// END OF THE SCRIPT TAG
+</script>
+

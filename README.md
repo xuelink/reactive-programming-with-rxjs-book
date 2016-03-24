@@ -8,3 +8,12 @@ http://www.amazon.com/Reactive-Programming-RxJS-Asynchronous-JavaScript/dp/16805
 We need to download rx
 
 `$ npm i`
+
+## Chapter 1 
+### Footnotes
+
+http://queue.acm.org/detail.cfm?id=2169076
+
+http://rx.codeplex.com/
+
+

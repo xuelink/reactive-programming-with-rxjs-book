@@ -11,7 +11,7 @@ allMoves.subscribe(function(e) {
   console.log(e.clientX, e.clientY)
 })
 
-var movesOnTheRight = allMoves.filter(function(e) { 
+var movesOnTheRight = allMoves.filter(function(e) {
   return e.clientX > innerWidth / 2
 })
 

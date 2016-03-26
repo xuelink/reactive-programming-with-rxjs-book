@@ -18,5 +18,8 @@ http://rx.codeplex.com/
 
 ## Chapter 2
 
-
 [Example Earthquake](https://github.com/behicsakar/reactive-programming-with-rxjs/tree/master/examples/earthquake/)
+
+### Footnotes
+
+https://github.com/Reactive-Extensions/RxJS/blob/master/doc/api/core/observable.md

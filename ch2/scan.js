@@ -1,6 +1,6 @@
 var Rx = require('rx');
 
-var avg = Rx.Observable.range(0,500000)
+var avg = Rx.Observable.range(0,50)
   .scan(function(prev, current){
     return {
       sum: prev.sum + current,

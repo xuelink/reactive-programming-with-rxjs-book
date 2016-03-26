@@ -16,4 +16,7 @@ http://queue.acm.org/detail.cfm?id=2169076
 
 http://rx.codeplex.com/
 
+## Chapter 2
 
+
+[Example Earthquake](https://github.com/behicsakar/reactive-programming-with-rxjs/tree/master/examples/earthquake/)

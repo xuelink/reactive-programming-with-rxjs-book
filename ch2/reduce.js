@@ -1,8 +1,7 @@
 var Rx = require('rx');
 
-var avg = Rx.Observable.range(0,5000)
+var avg = Rx.Observable.range(0,50)
   .reduce(function(prev, current){
-    console.log('prev:',prev)
     return {
       sum: prev.sum + current,
       count: prev.count + 1

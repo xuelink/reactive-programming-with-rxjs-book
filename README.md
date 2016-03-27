@@ -1,15 +1,21 @@
-# reactive-programming-with-rxjs
-This includes examples of `Reactive Programming with RxJS` book. 
+# Reactive Programming with RxJS
+##### Untangle Your Asynchronous JavaScript Code
+###### by Sergi Mansilla
 
-http://www.amazon.com/Reactive-Programming-RxJS-Asynchronous-JavaScript/dp/1680501291
+[Publisher Page](https://pragprog.com/book/smreactjs/reactive-programming-with-rxjs)
+
+[Amazon](http://www.amazon.com/Reactive-Programming-RxJS-Asynchronous-JavaScript/dp/1680501291)
+
+This includes examples of `Reactive Programming with RxJS` book. 
 
 ## Before We Start
 
-We need to download rx
+We need to download `rx`
 
 `$ npm i`
 
 ## Chapter 1 
+
 ### Footnotes
 
 http://queue.acm.org/detail.cfm?id=2169076

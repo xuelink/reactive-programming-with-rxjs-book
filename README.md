@@ -3,7 +3,7 @@ This includes examples of `Reactive Programming with RxJS` book.
 
 http://www.amazon.com/Reactive-Programming-RxJS-Asynchronous-JavaScript/dp/1680501291
 
-# Before We Start
+## Before We Start
 
 We need to download rx
 
@@ -18,7 +18,11 @@ http://rx.codeplex.com/
 
 ## Chapter 2
 
-[Example Earthquake](https://github.com/behicsakar/reactive-programming-with-rxjs/tree/master/examples/earthquake/)
+#### [Example Earthquake](https://github.com/behicsakar/reactive-programming-with-rxjs/tree/master/examples/earthquake/)
+
+Using the concepts that we’ve covered so far in this chapter, we’ll build a web application that uses RxJS to show us where earthquakes are happening in real time. We’ll start by building a functional but naive reactive implementa- tion, and we’ll improve it as we go. The final result will look like this:
+
+![Example Earthquake Image](https://github.com/behicsakar/reactive-programming-with-rxjs/raw/master/examples/earthquake/earthquake.png 'Earthquake')
 
 ### Footnotes
 

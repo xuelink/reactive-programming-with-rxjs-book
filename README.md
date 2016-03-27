@@ -33,3 +33,24 @@ Using the concepts that we’ve covered so far in this chapter, we’ll build a 
 ### Footnotes
 
 https://github.com/Reactive-Extensions/RxJS/blob/master/doc/api/core/observable.md
+
+## Chapter 3
+
+#### [Example Spaceship](https://github.com/behicsakar/reactive-programming-with-rxjs/tree/master/examples/spaceship/)
+
+In our game, the player will move the spaceship horizontally using the mouse, and will shoot by clicking the mouse or tapping the spacebar. Our game will have four main actors: the moving star field in the background, the player’s spaceship, the enemies, and the shots from both the player and the enemies.
+It will look like this:
+
+![Example Earthquake Image](https://github.com/behicsakar/reactive-programming-with-rxjs/raw/master/examples/spaceship/spaceship.png 'Spaceship')
+
+### Footnotes
+
+*.combineLatest()*
+
+http://reactivex.io/documentation/operators/combinelatest.html
+
+https://github.com/Reactive-Extensions/RxJS/blob/master/doc/api/core/operators/combinelatest.md
+
+*.sample()*
+
+https://github.com/Reactive-Extensions/RxJS/blob/master/doc/api/core/operators/sample.md

@@ -54,3 +54,90 @@ https://github.com/Reactive-Extensions/RxJS/blob/master/doc/api/core/operators/c
 *.sample()*
 
 https://github.com/Reactive-Extensions/RxJS/blob/master/doc/api/core/operators/sample.md
+
+### Small Errors Within Sample Codes on Book
+
+---
+
+> **In Ch2**
+> Purity and the Observable Pipeline Segment
+> spaceship_reactive/pipeline.js" code part
+
+~~FALSE : Rx.Observable.from(1,2,3,4,5,6,7,8)~~
+
+TRUE : Rx.Observable.from([1,2,3,4,5,6,7,8])   `// should be array`
+
+---
+
+> **In Ch3**
+> "RxJS's Subject Class" Section
+> after the sample code
+
+FALSE "In the preceding example we create a new Subject and a source Observable that emits an integer every ~~second.~~"
+
+TRUE  "In the preceding example we create a new Subject and a source Observable that emits an integer every **300 milisecond.**"
+
+---
+
+> https://media.pragprog.com/titles/smreactjs/code/spaceship_reactive/enemy_shots2.js
+> in this script something was wrong.
+> i debug it and realized that `enemy.length` are not found error.
+> I just added `try catch` block on enemy_shots2.js:83
+
+```
+var SHOOTING_SPEED = 15;
+function paintHeroShots(heroShots, enemies) {
+  heroShots.forEach(function(shot, i) {
+    try { var enemies_length = enemies.length }
+    catch(err) { var enemies_length = 0 }
+    for (var l=0; l < enemies_length || 0; l++) {
+      var enemy = enemies[l];
+      if (!enemy.isDead && collision(shot, enemy)) {
+        enemy.isDead = true;
+        shot.x = shot.y = -100;
+        break;
+      }
+    }
+
+    shot.y -= SHOOTING_SPEED;
+    drawTriangle(shot.x, shot.y, 5, '#ffff00', 'up');
+  });
+}
+```
+
+---
+
+
+> **CH3** example
+>in score.js
+
+FALSE 191 var ScoreSubject = new ~~Rx.Subject(0);~~
+
+TRUE 191 var ScoreSubject = new **Rx.BehaviorSubject(0);**
+
+---
+
+> https://media.pragprog.com/titles/smreactjs/code/examples_earthquake_ui/code3.bufferWithTime.js
+> in this link line 54
+
+`.filter(function(rows) { return rows.length > 0; } // (2))`
+
+**a closed parantehesis should be before comment not after.**
+
+---
+
+> https://media.pragprog.com/titles/smreactjs/code/hot_cold.js
+
+```
+var rangeToFive = Rx.Observable.range(1, 5);
+var obs1 = rangeToFive.subscribe(printValue); // 1, 2, 3, 4, 5
+var obs2 = Rx.Observable
+  .delay(2000)
+  .flatMap(function() {
+    return rangeToFive.subscribe(printValue); // 1, 2, 3, 4, 5
+  });
+```
+
+FALSE : `var obs2 = Rx.Observable.delay(2000)`
+
+TRUE : `var obs2 = Rx.Observable.just().delay(2000)`

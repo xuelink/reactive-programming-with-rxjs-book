@@ -61,39 +61,38 @@ function initialize() {
 
   var table = document.getElementById('quakes_info');
 
+  function getRowFromEvent(event) {
+    return Rx.Observable
+      .fromEvent(table, event)
+      .filter(function(event) { //(1)
+        var el = event.target;
+        return el.tagName === 'TD' && el.parentNode.id.length;
+      })
+      .pluck('target', 'parentNode') //(2)
+      .distinctUntilChanged(); //(3)
+  }
+
+  getRowFromEvent('mouseover')
+    .pairwise()
+    .subscribe(function(rows) {
+       var prevCircle = quakeLayer.getLayer(codeLayers[rows[0].id]);
+       var currCircle = quakeLayer.getLayer(codeLayers[rows[1].id]);
+
+       prevCircle.setStyle({ color: '#0000ff' });
+       currCircle.setStyle({ color: '#ff0000' });
+      });
+
+  getRowFromEvent('click')
+    .subscribe(function(row) {
+       var circle = quakeLayer.getLayer(codeLayers[row.id]);
+       map.panTo(circle.getLatLng());
+      });
+
   quakes
     .pluck('properties')
     .map(makeRow)
-    .bufferWithTime(500)
-    .filter(function(rows){ return rows.length > 0; })
-    .map(function(rows) {
-      var fragment = document.createDocumentFragment();
-      rows.forEach(function(row){
-        fragment.appendChild(row);
-      });
-      return fragment
-    })
-    .subscribe(function(fragment) {
-      var row = fragment.firstChild;
-      var circle = quakeLayer.getLayer(codeLayers[row.id]);
-
-      isHovering(row)
-        .subscribe(function(hovering) {
-          circle.setStyle({
-            color: hovering ?
-              '#ff0000' :
-              '#0000ff'
-          });
-        });
-
-      Rx.DOM
-        .click(row)
-        .subscribe(function() {
-          map.panTo(circle.getLatLng());
-          console.log(circle.getLatLng());
-        });
-
-      table.appendChild(fragment);
+    .subscribe(function(row) {
+      table.appendChild(row);
     });
 }
 

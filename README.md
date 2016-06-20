@@ -1,10 +1,10 @@
 # Reactive Programming with RxJS
 ##### Untangle Your Asynchronous JavaScript Code
 ###### by Sergi Mansilla
-
 [Publisher Page](https://pragprog.com/book/smreactjs/reactive-programming-with-rxjs)
-
 [Amazon](http://www.amazon.com/Reactive-Programming-RxJS-Asynchronous-JavaScript/dp/1680501291)
+
+**Book version: P1.0—December 2015**
 
 This includes examples of `Reactive Programming with RxJS` book. 
 
@@ -84,7 +84,7 @@ TRUE  "In the preceding example we create a new Subject and a source Observable 
 > i debug it and realized that `enemy.length` are not found error.
 > I just added `try catch` block on enemy_shots2.js:83
 
-```
+```javascript
 var SHOOTING_SPEED = 15;
 function paintHeroShots(heroShots, enemies) {
   heroShots.forEach(function(shot, i) {

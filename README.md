@@ -1,4 +1,7 @@
 # Reactive Programming with RxJS
+This repo is focused on following books examples.
+
+Reactive Programming with RxJS: Untangle Your Asynchronous JavaScript Code
 ##### Untangle Your Asynchronous JavaScript Code
 ###### by Sergi Mansilla
 [Publisher Page](https://pragprog.com/book/smreactjs/reactive-programming-with-rxjs)
